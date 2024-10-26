@@ -1,5 +1,7 @@
-openai
-streamlit
+openai==0.28.0
+streamlit==1.38.0
 streamlit.components.v1
 os
 dotenv
+
+

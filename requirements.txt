@@ -1,5 +1,7 @@
 openai==0.28.0
 streamlit>=1.10.0,<2.0.0
-dotenv
+python-dotenv
+
+
 
 

@@ -27,7 +27,7 @@ def get_sensory_play_recommendation(prompt):
         time.sleep(60)  # Tunggu 60 detik sebelum mencoba lagi
         return get_sensory_play_recommendation(prompt)
 # Setup CSS responsif dan tambahan gaya
-def apply_custom_css():
+def apply_custom_css(): 
     css = """
     <style>
     body {
@@ -60,9 +60,23 @@ def apply_custom_css():
         font-size: 1.1em;
         color: #666666;
     }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 600px) {
+        .container {
+            padding: 10px;
+        }
+        .info-text {
+            font-size: 1em;
+        }
+        .info-box {
+            padding: 10px;
+        }
+    }
     </style>
     """
     components.html(css, height=0)
+
 
 # Streamlit app layout
 def main():

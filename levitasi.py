@@ -14,14 +14,14 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 
 def get_sensory_play_recommendation(prompt):
     try:
-    response = openai.ChatCompletion.create(
+        response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
             {"role": "system", "content": "Kamu adalah asisten yang memberikan rekomendasi sensory play yang aman dan efektif untuk anak-anak dengan autism"},
             {"role": "user", "content": prompt}
         ]
-    )
-    return response.choices[0].message['content'].strip()
+        )
+        return response.choices[0].message['content'].strip()
     except openai.error.RateLimitError:
         print("Rate limit reached. Waiting before retrying...")
         time.sleep(60)  # Tunggu 60 detik sebelum mencoba lagi

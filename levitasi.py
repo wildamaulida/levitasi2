@@ -13,6 +13,7 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
 def get_sensory_play_recommendation(prompt):
+    try:
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
@@ -21,7 +22,10 @@ def get_sensory_play_recommendation(prompt):
         ]
     )
     return response.choices[0].message['content'].strip()
-
+    except openai.error.RateLimitError:
+        print("Rate limit reached. Waiting before retrying...")
+        time.sleep(60)  # Tunggu 60 detik sebelum mencoba lagi
+        return get_sensory_play_recommendation(prompt)
 # Setup CSS responsif dan tambahan gaya
 def apply_custom_css():
     css = """

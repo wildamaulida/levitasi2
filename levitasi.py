@@ -33,13 +33,13 @@ def apply_custom_css():
     body {
         font-family: 'Arial', sans-serif;
         background-color: #f0f8ff;
-        padding: 20px;
+        padding: 10px;
     }
     .container {
         max-width: 800px;
         margin: 0 auto;
         background-color: #ffffff;
-        padding: 25px;
+        padding: 15px;
         border-radius: 10px;
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     }
